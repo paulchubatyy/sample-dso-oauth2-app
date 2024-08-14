@@ -1,0 +1,6 @@
+__pyenv__
+.devcontainer
+.vscode
+.github
+.git
+.gitignore
