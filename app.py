@@ -37,7 +37,16 @@ def homepage():
 @app.route('/login')
 def login():
     redirect_uri = url_for('auth', _external=True)
-    endpoint = f"{OAUTH2_SERVER}/oauth2/authorize/?response_type=code&client_id={OAUTH2_CLIENT_ID}&redirect_uri={redirect_uri}&scope=read_orders%20write_orders&code_challenge={code_challenge}&code_challenge_method=S256&state=1234"
+    endpoint = (
+        f"{OAUTH2_SERVER}/oauth2/authorize/"
+        "?response_type=code"
+        f"&client_id={OAUTH2_CLIENT_ID}"
+        f"&redirect_uri={redirect_uri}"
+        "&scope=read_orders%20write_orders"
+        f"&code_challenge={code_challenge}"
+        "&code_challenge_method=S256"
+        "&state=1234"
+    )
     return redirect(endpoint)
 
 
